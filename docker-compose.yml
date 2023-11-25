@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  app:
+    container_name: item-app
+    image: item-app:v1
+    command: sh -c "npm start"
+    ports:
+      - 8080:8080
+    working_dir: /app
+    volumes:
+      - ./:/app
+    
+  mongo:
+    container_name: item-db
+    image: mongo:3
+    ports:
+      - 27017:27017
+
+
