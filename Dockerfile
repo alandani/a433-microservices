@@ -14,14 +14,14 @@ RUN yarn install --production
 # eksekusi file app.js
 CMD ["node", "app.js"]
 
-# setting port 8080
-EXPOSE 8080
-
 # set env ke production dan menggunakan database host container item-db
 ENV NODE_ENV=production DB_HOST=item-db
 
 # install dependency dan build
 RUN npm install --production --unsafe-perm && npm run build
+
+# setting port 8080
+EXPOSE 8080
 
 # perintah jalankan server
 RUN npm start

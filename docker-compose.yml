@@ -1,19 +1,29 @@
+# menggunakan dockercompose scheme version 3.7
 version: '3.7'
+# membuat services
 services:
   app:
+    # memberi nama container "item-app"
     container_name: item-app
+    # menggunakan image item-app:v1 yang telah di build oleh dockerfile
     image: item-app:v1
     # command: sh -c "npm start"
+    # forward port 8080 container ke port 80 host
     ports:
       - 80:8080
     
   mongo:
+    # memberi nama container "item-db"
     container_name: item-db
+    # menggunakan image mongo versi 3
     image: mongo:3
+    # menggunakan volume app-db dengan target /data/db
     volumes:
       - app-db:/data/db
+    # forward port 27017 container dan port 27017 host
     ports:
       - 27017:27017
 
 volumes:
+  # membuat volume app-db
   app-db:
