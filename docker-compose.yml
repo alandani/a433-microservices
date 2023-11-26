@@ -3,17 +3,17 @@ services:
   app:
     container_name: item-app
     image: item-app:v1
-    command: sh -c "npm start"
+    # command: sh -c "npm start"
     ports:
-      - 8080:8080
-    working_dir: /app
-    volumes:
-      - ./:/app
+      - 80:8080
     
   mongo:
     container_name: item-db
     image: mongo:3
+    volumes:
+      - app-db:/data/db
     ports:
       - 27017:27017
 
-
+volumes:
+  app-db:
