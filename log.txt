@@ -37,3 +37,90 @@ item-db   | 2023-11-26T04:36:41.113708047Z 2023-11-26T04:36:41.113+0000 I INDEX 
 item-db   | 2023-11-26T04:36:41.114339172Z 2023-11-26T04:36:41.114+0000 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
 item-db   | 2023-11-26T04:36:41.846434589Z 2023-11-26T04:36:41.846+0000 I NETWORK  [listener] connection accepted from 172.20.0.3:56502 #1 (1 connection now open)
 item-db   | 2023-11-26T04:36:41.851872339Z 2023-11-26T04:36:41.851+0000 I NETWORK  [conn1] received client metadata from 172.20.0.3:56502 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "arm64", version: "5.15.49-linuxkit-pr" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+
+Usage:  docker compose [OPTIONS] COMMAND
+
+Define and run multi-container applications with Docker.
+
+Options:
+      --ansi string                Control when to print ANSI control characters ("never"|"always"|"auto") (default "auto")
+      --compatibility              Run compose in backward compatibility mode
+      --dry-run                    Execute command in dry run mode
+      --env-file stringArray       Specify an alternate environment file.
+  -f, --file stringArray           Compose configuration files
+      --parallel int               Control max parallelism, -1 for unlimited (default -1)
+      --profile stringArray        Specify a profile to enable
+      --progress string            Set type of progress output (auto, tty, plain, quiet) (default "auto")
+      --project-directory string   Specify an alternate working directory
+                                   (default: the path of the, first specified, Compose file)
+  -p, --project-name string        Project name
+
+Commands:
+  build       Build or rebuild services
+  config      Parse, resolve and render compose file in canonical format
+  cp          Copy files/folders between a service container and the local filesystem
+  create      Creates containers for a service.
+  down        Stop and remove containers, networks
+  events      Receive real time events from containers.
+  exec        Execute a command in a running container.
+  images      List images used by the created containers
+  kill        Force stop service containers.
+  logs        View output from containers
+  ls          List running compose projects
+  pause       Pause services
+  port        Print the public port for a port binding.
+  ps          List containers
+  pull        Pull service images
+  push        Push service images
+  restart     Restart service containers
+  rm          Removes stopped service containers
+  run         Run a one-off command on a service.
+  start       Start services
+  stop        Stop services
+  top         Display the running processes
+  unpause     Unpause services
+  up          Create and start containers
+  version     Show the Docker Compose version information
+
+Run 'docker compose COMMAND --help' for more information on a command.
+item-app  | 2023-11-26T07:25:42.824148875Z 
+item-app  | 2023-11-26T07:25:42.824210458Z > docker-software-delivery@1.0.0 start /app
+item-app  | 2023-11-26T07:25:42.824216292Z > node ./bin/www
+item-app  | 2023-11-26T07:25:42.824219542Z 
+item-app  | 2023-11-26T07:25:43.049229917Z NODE_ENV: production
+item-app  | 2023-11-26T07:25:43.083066792Z Connected to database
+item-app  | 2023-11-26T07:25:56.237153090Z [0mGET / [32m200 [0m175.555 ms - 785[0m
+item-app  | 2023-11-26T07:25:56.295668382Z [0mGET /javascripts/dist/dist.min.js [32m200 [0m2.944 ms - 186999[0m
+item-app  | 2023-11-26T07:25:56.299684507Z [0mGET /stylesheets/style.css [32m200 [0m25.644 ms - 519[0m
+item-app  | 2023-11-26T07:25:56.322948673Z [0mGET /api [32m200 [0m5.383 ms - 2[0m
+item-app  | 2023-11-26T07:25:56.383780965Z [0mGET /favicon.ico [33m404 [0m7.795 ms - 270[0m
+item-db   | 2023-11-26T07:25:42.276267708Z 2023-11-26T07:25:42.275+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=1c0c1585b772
+item-db   | 2023-11-26T07:25:42.276311458Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] db version v3.6.23
+item-db   | 2023-11-26T07:25:42.276315833Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+item-db   | 2023-11-26T07:25:42.276319833Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+item-db   | 2023-11-26T07:25:42.276323500Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+item-db   | 2023-11-26T07:25:42.276326708Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] modules: none
+item-db   | 2023-11-26T07:25:42.276329750Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] build environment:
+item-db   | 2023-11-26T07:25:42.276332750Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+item-db   | 2023-11-26T07:25:42.276335792Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten]     distarch: aarch64
+item-db   | 2023-11-26T07:25:42.276339583Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten]     target_arch: aarch64
+item-db   | 2023-11-26T07:25:42.276342542Z 2023-11-26T07:25:42.276+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+item-db   | 2023-11-26T07:25:42.276819792Z 2023-11-26T07:25:42.276+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+item-db   | 2023-11-26T07:25:42.276945292Z 2023-11-26T07:25:42.276+0000 I STORAGE  [initandlisten] 
+item-db   | 2023-11-26T07:25:42.276958625Z 2023-11-26T07:25:42.276+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+item-db   | 2023-11-26T07:25:42.276963667Z 2023-11-26T07:25:42.276+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+item-db   | 2023-11-26T07:25:42.276967583Z 2023-11-26T07:25:42.276+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1454M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+item-db   | 2023-11-26T07:25:42.631309750Z 2023-11-26T07:25:42.631+0000 I STORAGE  [initandlisten] WiredTiger message [1700983542:631105][1:0xffff8ef76000], txn-recover: Main recovery loop: starting at 1/30464
+item-db   | 2023-11-26T07:25:42.737324250Z 2023-11-26T07:25:42.737+0000 I STORAGE  [initandlisten] WiredTiger message [1700983542:737133][1:0xffff8ef76000], txn-recover: Recovering log 1 through 2
+item-db   | 2023-11-26T07:25:42.802847208Z 2023-11-26T07:25:42.802+0000 I STORAGE  [initandlisten] WiredTiger message [1700983542:802647][1:0xffff8ef76000], txn-recover: Recovering log 2 through 2
+item-db   | 2023-11-26T07:25:42.850805917Z 2023-11-26T07:25:42.850+0000 I STORAGE  [initandlisten] WiredTiger message [1700983542:850612][1:0xffff8ef76000], txn-recover: Set global recovery timestamp: 0
+item-db   | 2023-11-26T07:25:42.862415167Z 2023-11-26T07:25:42.862+0000 I CONTROL  [initandlisten] 
+item-db   | 2023-11-26T07:25:42.862432792Z 2023-11-26T07:25:42.862+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+item-db   | 2023-11-26T07:25:42.862484167Z 2023-11-26T07:25:42.862+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+item-db   | 2023-11-26T07:25:42.862490750Z 2023-11-26T07:25:42.862+0000 I CONTROL  [initandlisten] 
+item-db   | 2023-11-26T07:25:42.867628083Z 2023-11-26T07:25:42.867+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+item-db   | 2023-11-26T07:25:42.868107167Z 2023-11-26T07:25:42.868+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+item-db   | 2023-11-26T07:25:42.868193375Z 2023-11-26T07:25:42.868+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+item-db   | 2023-11-26T07:25:42.868200583Z 2023-11-26T07:25:42.868+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+item-db   | 2023-11-26T07:25:43.072447334Z 2023-11-26T07:25:43.072+0000 I NETWORK  [listener] connection accepted from 172.22.0.3:35316 #1 (1 connection now open)
+item-db   | 2023-11-26T07:25:43.078695792Z 2023-11-26T07:25:43.078+0000 I NETWORK  [conn1] received client metadata from 172.22.0.3:35316 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "arm64", version: "5.15.49-linuxkit-pr" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }

@@ -20,6 +20,9 @@ services:
     # forward port 8080 container ke port 80 host
     ports:
       - 80:8080
+    # memastikan item-app berjalan setelah item-db diluncurkan
+    depends_on:
+      - mongo
     
   
 
